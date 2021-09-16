@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JS + LocalStorage</title>
+    <title>Libros Prestados</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -18,17 +18,17 @@
 
 <body onload="read()"> 
     <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">JS + LocalStorage</a>
+        <a class="navbar-brand" href="#">Libros Prestados</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Alumnos<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Registrar Prestamos<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./consulta.html">Consulta</a>
+                    <a class="nav-link" href="./consulta.html">Lista de Registros de prestamos</a>
                 </li>
             </ul>
 
@@ -39,47 +39,52 @@
         <div class="row">
 
             <div class="col-md-4">
-                <h3 style="text-align:center">Alta de Alumnos</h3>
+                <h3 style="text-align:center">Datos del libro prestado</h3>
 
                 <form action="#">
                     <div class="form-group ">
-                        <label for="Input1">Matrícula</label>
-                        <input type="text " class="form-control " id="Input1" placeholder="Num. de control">
+                        <label for="Input1">Folio</label>
+                        <input type="text " class="form-control " id="Input1" placeholder="Folio">
                     </div>
                     <div class="form-group">
-                        <label for="Input2">Nombre</label>
-                        <input type="text" class="form-control" id="Input2" placeholder="Nombre">
+                        <label for="Input2">Nombre del cliente</label>
+                        <input type="text" class="form-control" id="Input2" placeholder="Nombre del cliente">
                     </div>
                     <div class="form-group">
-                        <label for="Input3">Correo electrónico</label>
-                        <input type="email" class="form-control" id="Input3" aria-describedby="emailHelp" placeholder="Enter email">
+                        <label for="Input3">Titulo del libro</label>
+                        <input type="text" class="form-control" id="Input3" placeholder="Titulo del libro"> 
+                    </div>
+                    <div class="form-group">
+                        <label for="Input4">Correo electrónico del cliente</label>
+                        <input type="email" class="form-control" id="Input4" aria-describedby="emailHelp" placeholder="Correo cliente">
                     </div>
                     <div class="form-group ">
-                        <label for="Input4">Carrera</label>
-                        <select class="form-control " id="Input4">
+                        <label for="Input5">Tiempo del prestamo</label>
+                        <select class="form-control " id="Input5">
                             <option value="selecciona">selecciona</option>
-                            <option value="Informatica">Informatica</option>
-                            <option value="Sistemas">Sistemas</option>
-                            <option value="TICS">TICS</option>
+                            <option value="3 Días">3 Días</option>
+                            <option value="1 Semana">1 Semana</option>
+                            <option value="2 Semanas">2 Semanas</option>
                         </select>
                     </div>
-                    <button type="submit " class="btn btn-primary" onclick="createR()">Enviar</button>
-                    <button type="reset " class="btn btn-secondary" onclick="resetFields()">Limpiar</button>
+                    <button type="submit " class="btn btn-primary" onclick="createR()">Guardar</button>
+                    <button type="reset " class="btn btn-secondary" onclick="resetFields()">Limpiar Datos</button>
                 </form>
 
 
 
             </div>
             <div class="col-md-8">
-                <h3 style="text-align:center">Lista de Alumnos</h3>
+                <h3 style="text-align:center">Datos del libro prestado</h3>
 
                 <table class="table table-hover">
                     <thead>
                       <tr>
-                        <th scope="col">Matrícula</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Correo</th>
-                        <th scope="col">Carrera</th>
+                        <th scope="col">Folio</th>
+                        <th scope="col">Nombre del cliente</th>
+                        <th scope="col">Titulo del libro</th>
+                        <th scope="col">Correo electronico del cliente</th>
+                        <th scope="col">Tiempo del prestamo</th>
                         <th scope="col"></th>
                         <th scope="col"></th>
                       </tr>
